@@ -2,11 +2,14 @@
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useSmartNavigation } from '@/hooks/useSmartNavigation';
 
 const DEFAULT_NAVIGATION = {
+  logoUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=40&fit=crop&q=80',
+  logoAlt: 'Company Logo',
   brandName: 'DevTest',
   brandHref: '/',
   navItems: [{ label: 'Home', href: '#hero' }],
@@ -39,15 +42,23 @@ export default function Navigation(props: NavigationProps) {
     <section id="navigation" className="bg-background text-foreground border-b border-border">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Brand */}
+          {/* Brand with Logo */}
           <div className="flex-shrink-0">
             <Button
               variant="ghost"
-              className="text-lg font-semibold text-foreground hover:text-primary p-0 h-auto"
+              className="flex items-center gap-3 text-lg font-semibold text-foreground hover:text-primary p-2 h-auto"
               onClick={handleBrandClick}
               data-editable-href="brandHref"
               data-href={config.brandHref}
             >
+              <Image
+                src={config.logoUrl}
+                alt={config.logoAlt}
+                width={32}
+                height={32}
+                className="object-contain"
+                data-editable-src="logoUrl"
+              />
               <span data-editable="brandName">{config.brandName}</span>
             </Button>
           </div>
@@ -97,6 +108,21 @@ export default function Navigation(props: NavigationProps) {
               </SheetTrigger>
               <SheetContent side="right" className="bg-background text-foreground border-border">
                 <div className="flex flex-col space-y-6 mt-8">
+                  {/* Mobile Brand with Logo */}
+                  <div className="flex items-center gap-3 pb-4 border-b border-border">
+                    <Image
+                      src={config.logoUrl}
+                      alt={config.logoAlt}
+                      width={28}
+                      height={28}
+                      className="object-contain"
+                      data-editable-src="logoUrl"
+                    />
+                    <span className="text-lg font-semibold" data-editable="brandName">
+                      {config.brandName}
+                    </span>
+                  </div>
+
                   {/* Mobile Navigation Items */}
                   <div className="flex flex-col space-y-4">
                     {config.navItems.map((item, idx) => (
