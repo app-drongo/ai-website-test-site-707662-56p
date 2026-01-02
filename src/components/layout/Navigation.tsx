@@ -8,7 +8,8 @@ import { useState } from 'react';
 import { useSmartNavigation } from '@/hooks/useSmartNavigation';
 
 const DEFAULT_NAVIGATION = {
-  logoUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=40&fit=crop&q=80',
+  logoUrl:
+    'https://pub-60de11c8c43b49ea9bd786eb6273aa91.r2.dev/ed0d7fe4077272df5309c4bcf8c897a2.svg',
   logoAlt: 'Company Logo',
   brandName: 'DevTest',
   brandHref: '/',

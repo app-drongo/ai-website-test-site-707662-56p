@@ -9,7 +9,7 @@ import { useSmartNavigation } from '@/hooks/useSmartNavigation';
 
 const DEFAULT_HERO = {
   logoUrl:
-    'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=60&fit=crop&auto=format',
+    'https://pub-60de11c8c43b49ea9bd786eb6273aa91.r2.dev/ed0d7fe4077272df5309c4bcf8c897a2.svg',
   logoAlt: 'Company Logo',
   badge: 'New Release',
   title: 'Build the Future with AI-Powered Development',
